@@ -2,14 +2,15 @@
 # Passo 1: Entrar no sistema da empresa 
     # https://dlp.hashtagtreinamentos.com/python/intensivao/login
 
-import pyautogui 
-import time 
+import pyautogui # Biblioteca de Automação
+from time import sleep # Biblioteca de Tempo
 
 # pyautogui.write -> escrever um texto
 # pyautogui.press -> apertar 1 tecla
 # pyautogui.click -> clicar em algum lugar da tela
 # pyautogui.hotkey -> combinação de teclas
-pyautogui.PAUSE = 0.75 # Definindo o intervalo da execuçao de cada código do 
+
+pyautogui.PAUSE = 0.75 # Definindo o intervalo da execuçao de cada código do pyautogui
 
 # abrir o navegador (chrome)
 pyautogui.press("win")
@@ -19,20 +20,20 @@ pyautogui.press("enter")
 # entrar no link 
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
-time.sleep(3)
+sleep(3)
 
 
 # Passo 2: Fazer login
 # selecionar o campo de email
-pyautogui.click(x=653, y=372) 
+pyautogui.click(x=653, y=372) # Definindo o intervalo da execuçao de cada código do pyautogui
 # escrever o seu email
 pyautogui.write("pythonimpressionador@gmail.com")
 pyautogui.press("tab") # passando pro próximo campo
 pyautogui.write("sua senha")
 pyautogui.click(x=707, y=543) # clique no botao de login
-time.sleep(1)
+sleep(1)
 pyautogui.click(x=842, y=359)
-time.sleep(3)
+sleep(3)
 
 
 # Passo 3: Importar a base de produtos pra cadastrar
@@ -70,7 +71,7 @@ for linha in tabela.index:
         
     
     pyautogui.press('enter') # cadastra o produto (botao enviar)
-    time.sleep(1)
+    sleep(1)
     # dar scroll de tudo pra cima
     pyautogui.scroll(5000)
     # Passo 5: Repetir o processo de cadastro até o fim
